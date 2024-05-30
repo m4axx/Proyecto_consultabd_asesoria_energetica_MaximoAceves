@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añadir, Editar o Eliminar Contratos</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">Asesoría Energética</a>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="consulta.html">Consulta</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="graficos.html">Estadísticas</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container mt-5">
+        <h1 class="text-center">Añadir, Editar o Eliminar Contratos</h1>
+        <form id="add-form" class="mt-4">
+            <input type="text" id="add-CIF" placeholder="CIF" required class="form-control">
+            <input type="text" id="add-NOMBRE" placeholder="Nombre" required class="form-control">
+            <input type="text" id="add-CUPS" placeholder="CUPS" required class="form-control">
+            <input type="text" id="add-TARIFA" placeholder="Tarifa" required class="form-control">
+            <input type="text" id="add-COMERCIALIZADORA" placeholder="Comercializadora" required class="form-control">
+            <input type="text" id="add-COMERCIAL" placeholder="Comercial" required class="form-control">
+            <input type="text" id="add-ESTADO" placeholder="Estado" required class="form-control">
+            <input type="text" id="add-ACCIONES" placeholder="Acciones" required class="form-control">
+            <input type="text" id="add-FECHA" placeholder="Fecha" required class="form-control">
+            <input type="text" id="add-PAGADO" placeholder="Pagado" class="form-control">
+            <input type="text" id="add-O50" placeholder="O 50%" class="form-control">
+            <input type="text" id="add-DOCUMENTOS" placeholder="Documentos Adjuntos" class="form-control">
+            <input type="text" id="add-FECHA_CONTRATO" placeholder="Fecha de Acabar Contrato" class="form-control">
+            <button type="submit" class="btn btn-success btn-block">Añadir</button>
+        </form>
+
+        <div class="mt-4">
+            <h2>Editar o Eliminar Contrato</h2>
+            <form id="search-edit-form">
+                <div class="form-group">
+                    <label for="edit-query">Buscar Contrato para Editar/Eliminar:</label>
+                    <input type="text" id="edit-query" class="form-control" placeholder="CIF, Nombre, Comercializadora o Estado">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Buscar</button>
+            </form>
+            <div id="edit-results" class="list-group mt-4"></div>
+        </div>
+    </div>
+
+    <!-- Modal for editing -->
+    <div class="modal" id="editModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Editar Contrato</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="edit-form">
+                        <input type="hidden" id="edit-id">
+                        <input type="text" id="edit-CIF" placeholder="CIF" required class="form-control">
+                        <input type="text" id="edit-NOMBRE" placeholder="Nombre" required class="form-control">
+                        <input type="text" id="edit-CUPS" placeholder="CUPS" required class="form-control">
+                        <input type="text" id="edit-TARIFA" placeholder="Tarifa" required class="form-control">
+                        <input type="text" id="edit-COMERCIALIZADORA" placeholder="Comercializadora" required class="form-control">
+                        <input type="text" id="edit-COMERCIAL" placeholder="Comercial" required class="form-control">
+                        <input type="text" id="edit-ESTADO" placeholder="Estado" required class="form-control">
+                        <input type="text" id="edit-ACCIONES" placeholder="Acciones" required class="form-control">
+                        <input type="text" id="edit-FECHA" placeholder="Fecha" required class="form-control">
+                        <input type="text" id="edit-PAGADO" placeholder="Pagado" class="form-control">
+                        <input type="text" id="edit-O50" placeholder="O 50%" class="form-control">
+                        <input type="text" id="edit-DOCUMENTOS" placeholder="Documentos Adjuntos" class="form-control">
+                        <input type="text" id="edit-FECHA_CONTRATO" placeholder="Fecha de Acabar Contrato" class="form-control">
+                        <button type="submit" class="btn btn-primary btn-block">Guardar Cambios</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Asesoría Energética</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">Asesoría Energética</a>
+                <ul class="navbar-nav mr-auto">
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="crud.html">Gestión de Contratos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="graficos.html">Estadísticas</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container mt-5">
+        <h1 class="text-center">Consulta de Asesoría Energética</h1>
+        <form id="search-form" class="mt-4">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="query">CIF:</label>
+                    <input type="text" id="query" class="form-control" placeholder="CIF">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="queryNombre">Nombre:</label>
+                    <input type="text" id="queryNombre" class="form-control" placeholder="Nombre">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="queryComercializadora">Comercializadora:</label>
+                    <input type="text" id="queryComercializadora" class="form-control" placeholder="Comercializadora">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="queryEstado">Estado:</label>
+                    <input type="text" id="queryEstado" class="form-control" placeholder="Estado">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Buscar</button>
+        </form>
+        <div class="mt-4">
+            <h2>Resultados de la Consulta</h2>
+            <div id="results" class="list-group"></div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
